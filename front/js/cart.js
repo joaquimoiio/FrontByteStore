@@ -32,7 +32,6 @@ function loadCart() {
         cartItemElement.setAttribute('data-id', item.id);
         cartItemElement.setAttribute('data-price', item.preco);
         
-        // Incluir a imagem do produto se disponível
         const imageSrc = item.imagem || 'https://via.placeholder.com/90x90?text=Produto';
         
         cartItemElement.innerHTML = `

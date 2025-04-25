@@ -222,7 +222,6 @@ function exibirResultadosPesquisa(produtos, termo, dadosSimulados = false) {
         productCard.style.textAlign = 'center';
         productCard.style.backgroundColor = 'white';
 
-        // Adicionar imagem do produto se disponível
         const imageHtml = product.imagemPrincipal ? 
             `<img src="${product.imagemPrincipal}" alt="${product.nome}" style="max-width: 100%; max-height: 150px; object-fit: contain;">` : 
             `<h4 style="color: #4088f4;">${product.nome}</h4>`;

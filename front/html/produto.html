@@ -19,7 +19,6 @@
         <div class="produto-info">
             <h1 class="produto-nome">Carregando produto...</h1>
             
-            <!-- Adicionando a imagem do produto -->
             <div class="produto-imagem">
                 <img src="" alt="Imagem do produto" style="max-width: 300px; max-height: 300px; margin: 20px auto; display: block;">
             </div>
@@ -64,71 +63,7 @@
     <script src="../js/productLoader.js"></script>
     <script src="../js/search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Override the displayProductDetails function
-        window.addEventListener('load', function() {
-            if (typeof displayProductDetails === 'function') {
-                const originalDisplayProductDetails = displayProductDetails;
-                
-                displayProductDetails = function(product) {
-                    // Update product name
-                    const productName = document.querySelector('.produto-nome');
-                    if (productName) {
-                        productName.textContent = product.nome;
-                    }
-                    
-                    // Update product image
-                    const productImage = document.querySelector('.produto-imagem img');
-                    if (productImage && product.imagemPrincipal) {
-                        productImage.src = product.imagemPrincipal;
-                        productImage.alt = product.nome;
-                    }
-                    
-                    // Update description if available
-                    const productDescription = document.querySelector('.produto-descricao');
-                    if (productDescription && product.descricao) {
-                        productDescription.textContent = product.descricao;
-                    }
-                    
-                    // Update prices
-                    const oldPrice = document.querySelector('.preco-antigo');
-                    if (oldPrice) {
-                        oldPrice.textContent = `R$${formatPrice(product.precoAntigo)}`;
-                    }
-                    
-                    const promoPrice = document.querySelector('.preco-promocao');
-                    if (promoPrice) {
-                        promoPrice.textContent = `R$${formatPrice(product.precoAtual)}`;
-                    }
-                    
-                    // Update parcelado price
-                    const parceladoPrices = document.querySelectorAll('.preco-parcelado p');
-                    if (parceladoPrices.length > 0) {
-                        parceladoPrices[0].textContent = `R$${formatPrice(product.precoAtual)}`;
-                    }
-                    
-                    // Set up add to cart button handler
-                    const addToCartBtn = document.querySelector('.btn-carrinho');
-                    if (addToCartBtn) {
-                        addToCartBtn.addEventListener('click', function() {
-                            const quantity = parseInt(document.getElementById('quantidade').value) || 1;
-                            addToCart(product, quantity);
-                        });
-                    }
-                    
-                    // Set up buy now button handler
-                    const buyNowBtn = document.querySelector('.btn-comprar');
-                    if (buyNowBtn) {
-                        buyNowBtn.addEventListener('click', function() {
-                            const quantity = parseInt(document.getElementById('quantidade').value) || 1;
-                            addToCart(product, quantity);
-                            window.location.href = 'carrinho.html';
-                        });
-                    }
-                };
-            }
-        });
-    </script>
+    <script src="../js/updadeProduct.js"></script>
 </body>
 
 </html>
