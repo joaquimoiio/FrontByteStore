@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function setupLogoutFunctionality() {
     setTimeout(() => {
         const logoutLink = document.querySelector('.logout-link') || 
-                          document.querySelector('a[href="../html/index.html"]');
+                          document.querySelector('a[href="../index.html"]');
         
         if (logoutLink) {
             logoutLink.addEventListener('click', function(e) {
