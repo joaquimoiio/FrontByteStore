@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function setupLogoutFunctionality() {
     setTimeout(() => {
         const logoutLink = document.querySelector('.logout-link') || 
-                          document.querySelector('a[href="../html/exibirProduto.html"]');
+                          document.querySelector('a[href="../html/index.html"]');
         
         if (logoutLink) {
             logoutLink.addEventListener('click', function(e) {
@@ -46,7 +46,7 @@ function setupLogoutFunctionality() {
                 localStorage.removeItem('isLoggedIn');
                 localStorage.removeItem('usuario');
                 
-                window.location.href = "exibirProduto.html";
+                window.location.href = "index.html";
             });
             console.log("Funcionalidade de logout configurada");
         } else {

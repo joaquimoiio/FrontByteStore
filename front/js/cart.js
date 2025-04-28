@@ -21,7 +21,7 @@ function loadCart() {
     cartContainer.innerHTML = '';
     
     if (cartItems.length === 0) {
-        cartContainer.innerHTML = '<div class="empty-cart"><p>Seu carrinho está vazio</p><a href="exibirProduto.html" class="btn btn-primary">Continuar Comprando</a></div>';
+        cartContainer.innerHTML = '<div class="empty-cart"><p>Seu carrinho está vazio</p><a href="index.html" class="btn btn-primary">Continuar Comprando</a></div>';
         document.querySelector('.summary').style.visibility = 'hidden';
         return;
     }
@@ -87,7 +87,7 @@ function setupCartEventListeners() {
             cartItem.remove();
 
             if (document.querySelectorAll('.cart-item').length === 0) {
-                cartContainer.innerHTML = '<div class="empty-cart"><p>Seu carrinho está vazio</p><a href="exibirProduto.html" class="btn btn-primary">Continuar Comprando</a></div>';
+                cartContainer.innerHTML = '<div class="empty-cart"><p>Seu carrinho está vazio</p><a href="index.html" class="btn btn-primary">Continuar Comprando</a></div>';
                 document.querySelector('.summary').style.visibility = 'hidden';
             }
         }
@@ -258,7 +258,7 @@ function processCheckout() {
         
         localStorage.removeItem('cart');
 
-        window.location.href = 'exibirProduto.html';
+        window.location.href = 'index.html';
     })
     .catch(error => {
         console.error('Erro ao processar pedido:', error);
@@ -274,7 +274,7 @@ function processCheckout() {
 
             localStorage.removeItem('cart');
 
-            window.location.href = 'exibirProduto.html';
+            window.location.href = 'index.html';
         }
     });
 }

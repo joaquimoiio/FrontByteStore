@@ -42,7 +42,7 @@ function verificar(event) {
             localStorage.removeItem('redirectAfterLogin');
             window.location.href = redirectPage;
         } else {
-            window.location.href = "exibirProduto.html";
+            window.location.href = "index.html";
         }
     } 
     else {

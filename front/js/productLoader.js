@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const isProductPage = window.location.href.includes('produto.html');
-    const isProductListPage = window.location.href.includes('exibirProduto.html');
+    const isProductListPage = window.location.href.includes('index.html');
     
     if (isProductPage) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.error('Product ID not found in URL');
             alert('Produto não encontrado. Redirecionando para a página principal.');
-            window.location.href = 'exibirProduto.html';
+            window.location.href = 'index.html';
         }
     } else if (isProductListPage) {
         loadFeaturedProducts();

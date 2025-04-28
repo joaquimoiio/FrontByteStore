@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn('Formulário de pesquisa não encontrado');
         }
 
-        if (window.location.href.includes('exibirProduto.html')) {
+        if (window.location.href.includes('index.html')) {
             const urlParams = new URLSearchParams(window.location.search);
             const searchTerm = urlParams.get('busca');
 
@@ -80,7 +80,7 @@ function restaurarExibicaoNormal() {
         searchResults.innerHTML = '';
     }
 
-    if (window.location.href.includes('exibirProduto.html')) {
+    if (window.location.href.includes('index.html')) {
         console.log('Recarregando a página para exibir produtos em destaque');
         window.location.reload();
     }
@@ -91,10 +91,10 @@ function executarPesquisa(termo) {
 
     localStorage.setItem('ultimaPesquisa', termo);
 
-    if (window.location.href.includes('exibirProduto.html')) {
+    if (window.location.href.includes('index.html')) {
         carregarResultadosPesquisa(termo);
     } else {
-        window.location.href = `exibirProduto.html?busca=${encodeURIComponent(termo)}`;
+        window.location.href = `index.html?busca=${encodeURIComponent(termo)}`;
     }
 }
 
